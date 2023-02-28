@@ -4,7 +4,7 @@ from io import BytesIO
 
 # Set the OpenAI API endpoint and your API key
 API_ENDPOINT = "https://api.openai.com/v1/images/generations"
-API_KEY = "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"
+API_KEY = "YOUR_API_KEY"
 
 # Set the text prompt and model parameters
 prompt = "3D model of a red cube on a green plane"
