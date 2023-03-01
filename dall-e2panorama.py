@@ -4,12 +4,12 @@ from io import BytesIO
 
 # Set the OpenAI API endpoint and your API key
 API_ENDPOINT = "https://api.openai.com/v1/images/generations"
-API_KEY = "YOUR_API_KEY"
+API_KEY = "YOU_API_KEY"
 
 # Set the text prompt and model parameters
-prompt = "3D model of a equirectangular panorama nice living room"
+prompt = "3D model of a equirectangular panorama a beautiful mountain range with a clear blue sky and fluffy white clouds."
 model = "image-alpha-001"
-size = "512x512"
+size = "1024x1024"
 
 # Send the API request to generate the image
 response = requests.post(
@@ -32,10 +32,10 @@ if response.status_code == 200:
     # Get the URL of the generated image from the response
     image_url = response.json()["data"][0]["url"]
 
-    # Download and display the image using Pillow
+    # Download and save the image using Pillow
     image_data = requests.get(image_url).content
     image = Image.open(BytesIO(image_data))
-    image.show()
+    image.save("generated_image.png")
 else:
     # Display the error message if the request failed
     print(f"Error: {response.text}")
