@@ -35,6 +35,7 @@ if response.status_code == 200:
     # Download and display the image using Pillow
     image_data = requests.get(image_url).content
     image = Image.open(BytesIO(image_data))
+    image.save("generated_image.png")
     image.show()
 else:
     # Display the error message if the request failed
